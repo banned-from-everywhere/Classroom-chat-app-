@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+	--whatsapp-green: #25D366;
+	--whatsapp-dark: #128C7E;
+	--whatsapp-light: #DCF8C6;
+	--chat-bg: #E5DDD5;
+	--header-bg: #075E54;
+	--sidebar-bg: #FFFFFF;
+	--message-out: #DCF8C6;
+	--message-in: #FFFFFF;
+	--text-primary: #303030;
+	--text-secondary: #667781;
+	--border-radius: 7.5px;
+	--shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+	--shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+	font-size: 15px;
+	line-height: 1.5;
+	background: var(--chat-bg);
+	color: var(--text-primary);
+	min-height: 100vh;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: var(--whatsapp-dark);
+}
+
+.btn {
+	cursor: pointer;
+	padding: 8px 16px;
+	background: var(--whatsapp-green);
+	color: white;
+	border: none;
+	border-radius: var(--border-radius);
+	font-size: 14px;
+	font-weight: 500;
+	transition: background-color 0.2s;
+}
+
+.btn:hover {
+	background: var(--whatsapp-dark);
+}
+
+/* Chat Container */
+.chat-container {
+	max-width: 1400px;
+	background: var(--chat-bg);
+	margin: 0 auto;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.chat-header {
+	background: var(--header-bg);
+	color: white;
+	padding: 10px 16px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: var(--shadow-sm);
+}
+
+.chat-header h1 {
+	font-size: 1.1rem;
+	font-weight: 500;
+}
+
+.chat-main {
+	display: grid;
+	grid-template-columns: 350px 1fr;
+	flex: 1;
+	overflow: hidden;
+}
+
+/* Sidebar */
+.chat-sidebar {
+	background: var(--sidebar-bg);
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+}
+
+.chat-sidebar h2 {
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--text-primary);
+	padding: 16px;
+	background: #F0F2F5;
+}
+
+.chat-sidebar h3 {
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: var(--text-secondary);
+	padding: 16px;
+	background: #F0F2F5;
+}
+
+.chat-sidebar ul li {
+	padding: 12px 16px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+	transition: background-color 0.2s;
+}
+
+.chat-sidebar ul li:hover {
+	background-color: #F5F6F6;
+}
+
+/* Messages */
+.chat-messages {
+	padding: 20px;
+	overflow-y: auto;
+	background: var(--chat-bg);
+	background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.chat-messages .message {
+	max-width: 65%;
+	padding: 8px 12px;
+	margin-bottom: 8px;
+	border-radius: 7.5px;
+	position: relative;
+	word-wrap: break-word;
+}
+
+.chat-messages .message.outgoing {
+	background-color: var(--message-out);
+	margin-left: auto;
+	border-top-right-radius: 0;
+}
+
+.chat-messages .message.incoming {
+	background-color: var(--message-in);
+	margin-right: auto;
+	border-top-left-radius: 0;
+}
+
+.chat-messages .message .meta {
+	font-size: 0.75rem;
+	color: var(--text-secondary);
+	margin-bottom: 4px;
+}
+
+.chat-messages .message .meta span {
+	color: var(--text-secondary);
+	font-weight: 400;
+	margin-left: 4px;
+}
+
+/* Form */
+.chat-form-container {
+	padding: 10px 16px;
+	background-color: #F0F2F5;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.chat-form-container form {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.chat-form-container input[type='text'] {
+	flex: 1;
+	padding: 9px 12px;
+	border: none;
+	border-radius: 20px;
+	font-size: 15px;
+	background: white;
+	transition: box-shadow 0.2s;
+}
+
+.chat-form-container input[type='text']:focus {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--whatsapp-green);
+}
+
+/* Join Page */
+.join-container {
+	max-width: 400px;
+	margin: 80px auto;
+	background: var(--sidebar-bg);
+	border-radius: 3px;
+	box-shadow: var(--shadow-md);
+}
+
+.join-header {
+	text-align: center;
+	padding: 20px;
+	background: var(--header-bg);
+	color: white;
+}
+
+.join-header h1 {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.join-main {
+	padding: 20px;
+}
+
+.join-main .form-control {
+	margin-bottom: 16px;
+}
+
+.join-main label {
+	display: block;
+	margin-bottom: 6px;
+	font-weight: 500;
+	color: var(--text-primary);
+}
+
+.join-main input[type='text'],
+.join-main select {
+	width: 100%;
+	padding: 9px 12px;
+	border: 1px solid #E5E7EB;
+	border-radius: 3px;
+	font-size: 15px;
+	transition: border-color 0.2s;
+}
+
+.join-main input[type='text']:focus,
+.join-main select:focus {
+	outline: none;
+	border-color: var(--whatsapp-green);
+}
+
+.join-main .btn {
+	width: 100%;
+	padding: 10px;
+	font-size: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.chat-main {
+		grid-template-columns: 1fr;
+	}
+
+	.chat-sidebar {
+		display: none;
+	}
+
+	.chat-container {
+		margin: 0;
+	}
+
+	.chat-messages .message {
+		max-width: 85%;
+	}
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.3);
+}
